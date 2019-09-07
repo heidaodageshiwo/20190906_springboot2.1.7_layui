@@ -96,11 +96,6 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.60</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<optional>true</optional> <!-- 这个需要为 true 热部署才有效 -->
-		</dependency>
 
 		<!--test-->
 		<dependency>
@@ -115,10 +110,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<!--该配置必须-->
-					<fork>true</fork>
-				</configuration>
+
 
 			</plugin>
 			<!--mvn clean package 报错 Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2-->
@@ -159,8 +151,8 @@
 				<configuration>
 					<!--允许移动生成的文件 -->
 					<verbose>true</verbose>
-					<!-- 是否覆盖 -->
-					<overwrite>true</overwrite>
+					<!-- 是否覆盖 默认是ture-->
+					<overwrite>false</overwrite>
 					<!-- 自动生成的配置 -->
 					<configurationFile>
 						src/main/resources/mybatis-generator.xml</configurationFile>
