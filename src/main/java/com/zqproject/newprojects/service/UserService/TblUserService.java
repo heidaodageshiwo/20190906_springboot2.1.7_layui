@@ -38,4 +38,22 @@ public class TblUserService {
     public Page<tbl_user> getUsers_page() {
         return tbl_userMapper.getUsers_page();
     }
+
+    /**
+     * layui table表格数据分页展示
+     * @param beforeNum
+     * @param limitNum
+     * @return
+     */
+    public List<tbl_user> getAllMess( Integer beforeNum, Integer limitNum) {
+        return tbl_userMapper.getAllMess( beforeNum, limitNum);
+    }
+
+    /**
+     * layui table表格查询总数
+     * @return
+     */
+    public int selectCount() {
+        return tbl_userMapper.selectCount();
+    }
 }

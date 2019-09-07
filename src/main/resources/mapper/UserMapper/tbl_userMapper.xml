@@ -79,5 +79,19 @@
     SELECT * FROM tbl_user
   </select>
 
+  <!-- 获取信息 -->
+  <select id="getAllMess" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tbl_user
+    <if test="beforeNum != null and limitNum != null">
+      limit #{beforeNum},#{limitNum}
+    </if>
+  </select>
+
+  <!-- 获取总数 -->
+  <select id="selectCount" resultType="java.lang.Integer">
+    select count(*) from tbl_user
+  </select>
 
 </mapper>
